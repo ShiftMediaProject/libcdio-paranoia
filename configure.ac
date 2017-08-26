@@ -61,9 +61,9 @@ dnl cheeck whether ld supports --version-script
 
 AC_ARG_ENABLE(ld-version-script,
   AS_HELP_STRING([--disable-ld-version-script],
-  [Disable linker vresion script for libraries (Defauilt is to use linker script if the linger supports it)]),
+  [Disable linker version script for libraries (Defauilt is to use linker script if the linger supports it)]),
   [enable_version_script=$enableval],
-  [enable_version_script=auto])
+  [enable_version_script=yes])
 
 AM_CONDITIONAL(VERSION_SCRIPT, test "x$enable_version_script" = "xyes")
 
@@ -243,7 +243,9 @@ dnl native_abs_top_srcdir is used here.
 case $srcdir in
   .)  # We are building in place.
    native_abs_top_srcdir=$ac_pwd ;;
+  changequote(`,')
   [\\/]* | ?:[\\/]* )  # Absolute name.
+  changequote([,])
     native_abs_top_srcdir=$srcdir ;;
   *) # Relative name.
     native_abs_top_srcdir=$ac_pwd/$srcdir ;;
