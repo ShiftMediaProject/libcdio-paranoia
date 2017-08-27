@@ -357,9 +357,9 @@
       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -370,8 +370,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -381,8 +381,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
@@ -413,9 +413,9 @@ del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -426,8 +426,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -437,8 +437,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
@@ -472,9 +472,9 @@ del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -485,8 +485,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -496,8 +496,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
@@ -531,9 +531,9 @@ del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -544,8 +544,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -555,8 +555,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
@@ -588,9 +588,9 @@ del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -601,8 +601,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -612,8 +612,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
@@ -645,9 +645,9 @@ del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -658,8 +658,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -669,8 +669,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
@@ -710,9 +710,9 @@ del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -723,8 +723,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -734,8 +734,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
@@ -775,9 +775,9 @@ del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -788,8 +788,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -799,8 +799,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
@@ -840,9 +840,9 @@ del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -853,8 +853,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -864,8 +864,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
@@ -905,9 +905,9 @@ del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -918,8 +918,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -929,8 +929,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
@@ -971,9 +971,9 @@ del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -984,8 +984,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -995,8 +995,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
@@ -1037,9 +1037,9 @@ del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -1050,8 +1050,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -1061,8 +1061,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
@@ -1102,9 +1102,9 @@ del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -1115,8 +1115,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -1126,8 +1126,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
@@ -1167,9 +1167,9 @@ del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include
-mkdir $(OutDir)\include\cdio\paranoia
-copy ..\include\cdio\paranoia\*.h $(OutDir)\include\cdio\paranoia
+      <Command>mkdir "$(OutDir)"\include
+mkdir "$(OutDir)"\include\cdio\paranoia
+copy ..\include\cdio\paranoia\*.h "$(OutDir)"\include\cdio\paranoia
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\libcdio-paranoia.txt</Command>
     </PostBuildEvent>
@@ -1180,8 +1180,8 @@ del ..\config.h
 if exist ..\include\cdio\paranoia\version.h (
 del ..\include\cdio\paranoia\version.h
 )
-if exist $(OutDir)\include\cdio\paranoia (
-rd /s /q $(OutDir)\include\cdio\paranoia
+if exist "$(OutDir)"\include\cdio\paranoia (
+rd /s /q "$(OutDir)"\include\cdio\paranoia
 cd ../
 cd $(ProjectDir)
 )</Command>
@@ -1191,8 +1191,8 @@ cd $(ProjectDir)
     </CustomBuildStep>
     <CustomBuildStep>
       <Outputs>force_clean</Outputs>
-      <Command>if exist $(OutDir)\include\cdio\paranoia (
-rmdir /s /q $(OutDir)\include\cdio\paranoia
+      <Command>if exist "$(OutDir)"\include\cdio\paranoia (
+rmdir /s /q "$(OutDir)"\include\cdio\paranoia
 )
 if exist $(OutDir)\licenses\libcdio-paranoia.txt (
 del /f /q $(OutDir)\licenses\libcdio-paranoia.txt
