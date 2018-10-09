@@ -26,6 +26,13 @@
 # include <sys/time.h>
 #endif
 
+#if defined(_MSC_VER)
+#include <io.h>
+#ifndef STDERR_FILENO
+#define STDERR_FILENO 2
+#endif
+#endif
+
 #include "common_interface.h"
 #include "utils.h"
 void
