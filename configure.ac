@@ -1,4 +1,4 @@
-dnl Copyright (C)  2011-2017
+dnl Copyright (C)  2011-2017, 2019
 dnl Rocky Bernstein <rocky@gnu.org>
 dnl
 dnl This program is free software: you can redistribute it and/or modify
@@ -14,9 +14,9 @@ dnl
 dnl You should have received a copy of the GNU General Public License
 dnl along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-define(RELEASE_NUM, 94+2)
+define(RELEASE_NUM, 2.0.0)
 define(PARANOIA_VERSION, 10.2)
-define(LIBCDIO_PARANOIA_VERSION_STR, $1+0.$2git)
+define(LIBCDIO_PARANOIA_VERSION_STR, $1+$2)
 
 AC_DEFINE([PACKAGE], [libcdio-paranoia], [cdparanoia using libcdio])
 
@@ -85,6 +85,9 @@ dnl Checks for programs.
 AC_AIX
 
 AC_PROG_MKDIR_P
+
+AC_PROG_AWK
+AC_SUBST(AWK)
 
 if test "x$GCC" != "xyes"
 then
@@ -465,6 +468,7 @@ AC_CONFIG_FILES([
 # AC_CONFIG_FILES([po/Makefile])
 AC_CONFIG_FILES([test/check_paranoia.sh], [chmod +x test/check_paranoia.sh])
 AC_CONFIG_FILES([test/endian.sh], [chmod +x test/endian.sh])
+AC_CONFIG_FILES([test/check_start_track_not_one.sh], [chmod +x test/check_start_track_not_one.sh])
 AC_OUTPUT
 
 AC_MSG_NOTICE([
