@@ -151,6 +151,10 @@
 
 /* Define to 1 if you have the `snprintf' function. */
 #define HAVE_SNPRINTF 1
+#include <crtversion.h>
+#if _VC_CRT_MAJOR_VERSION < 14
+#define snprintf _snprintf
+#endif
 
 /* Define 1 if you have Solaris CD-ROM support */
 /* #undef HAVE_SOLARIS_CDROM */
