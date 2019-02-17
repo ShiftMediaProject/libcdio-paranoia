@@ -103,6 +103,7 @@
 #include <string.h>
 #endif
 #include <math.h>
+#include <cdio/bytesex.h>
 #include <cdio/paranoia/cdda.h>
 #include "../cdda_interface/smallft.h"
 #include <cdio/paranoia/version.h>
@@ -140,7 +141,7 @@ const char *paranoia_cb_mode2str[] = {
 paranoia_mode_t    debug_paranoia_mode;
 paranoia_cb_mode_t debug_paranoia_cb_mode;
 
-static inline long
+static CDIO_INLINE long
 re(root_block *root)
 {
   if (!root)return(-1);
@@ -148,7 +149,7 @@ re(root_block *root)
   return(ce(root->vector));
 }
 
-static inline long
+static CDIO_INLINE long
 rb(root_block *root)
 {
   if (!root)return(-1);
@@ -156,7 +157,7 @@ rb(root_block *root)
   return(cb(root->vector));
 }
 
-static inline
+static CDIO_INLINE
 long rs(root_block *root)
 {
   if (!root)return(-1);
@@ -164,7 +165,7 @@ long rs(root_block *root)
   return(cs(root->vector));
 }
 
-static inline int16_t *
+static CDIO_INLINE int16_t *
 rv(root_block *root){
   if (!root)return(NULL);
   if (!root->vector)return(NULL);
@@ -206,7 +207,7 @@ enum  {
  * If (ret_begin) or (ret_end) are not NULL, it fills them with the
  * offsets of the first and last matching samples in A.
  */
-static inline long
+static CDIO_INLINE long
 i_paranoia_overlap(int16_t *buffA,int16_t *buffB,
 		   long offsetA, long offsetB,
 		   long sizeA,long sizeB,
@@ -248,7 +249,7 @@ i_paranoia_overlap(int16_t *buffA,int16_t *buffB,
  * If (ret_begin) or (ret_end) are not NULL, it fills them with the
  * offsets of the first and last matching samples in A.
  */
-static inline long
+static CDIO_INLINE long
 i_paranoia_overlap2(int16_t *buffA,int16_t *buffB,
 		    unsigned char *flagsA,
 		    unsigned char *flagsB,
@@ -327,7 +328,7 @@ i_paranoia_overlap2(int16_t *buffA,int16_t *buffB,
  * (I.e., offset indicates the distance between what A considers sample N
  * on the CD and what B considers sample N.)
  */
-static inline long int
+static CDIO_INLINE long int
 do_const_sync(c_block_t *A,
 	      sort_info_t *B,
 	      unsigned char *flagB,
@@ -397,7 +398,7 @@ do_const_sync(c_block_t *A,
    post from root. Begin, end, offset count from B's frame of
    reference */
 
-static inline long int
+static CDIO_INLINE long int
 try_sort_sync(cdrom_paranoia_t *p,
 	      sort_info_t *A, unsigned char *Aflags,
 	      c_block_t *B,
@@ -548,7 +549,7 @@ afterward. */
  * into the verified root (and its absolute position determined) in
  * stage 2.
  */
-static inline void
+static CDIO_INLINE void
 stage1_matched(c_block_t *old, c_block_t *new,
 	       long matchbegin,long matchend,
 	       long matchoffset,

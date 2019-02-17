@@ -32,7 +32,7 @@ struct timespec
 /* I wonder how many alignment issues this is gonna trip in the
    future...  it shouldn't trip any...  I guess we'll find out :) */
 
-static inline int 
+static CDIO_INLINE int
 bigendianp(void)
 {
   int test=1;
@@ -49,32 +49,32 @@ extern int gettime(struct timespec *);
 
 #ifndef WORDS_BIGENDIAN
 
-static inline int16_t be16_to_cpu(int16_t x){
+static CDIO_INLINE int16_t be16_to_cpu(int16_t x){
   return(UINT16_SWAP_LE_BE_C(x));
 }
 
-static inline int16_t le16_to_cpu(int16_t x){
+static CDIO_INLINE int16_t le16_to_cpu(int16_t x){
   return(x);
 }
 
 #else
 
-static inline int16_t be16_to_cpu(int16_t x){
+static CDIO_INLINE int16_t be16_to_cpu(int16_t x){
   return(x);
 }
 
-static inline int16_t le16_to_cpu(int16_t x){
+static CDIO_INLINE int16_t le16_to_cpu(int16_t x){
   return(UINT16_SWAP_LE_BE_C(x));
 }
 
 
 #endif
 
-static inline int16_t cpu_to_be16(int16_t x){
+static CDIO_INLINE int16_t cpu_to_be16(int16_t x){
   return(be16_to_cpu(x));
 }
 
-static inline int16_t cpu_to_le16(int16_t x){
+static CDIO_INLINE int16_t cpu_to_le16(int16_t x){
   return(le16_to_cpu(x));
 }
 
