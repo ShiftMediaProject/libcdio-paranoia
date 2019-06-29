@@ -1,0 +1,282 @@
+diff --git a/lib/cdda_interface/utils.c b/lib/cdda_interface/utils.c
+index 9aed89d..59954db 100644
+--- a/lib/cdda_interface/utils.c
++++ b/lib/cdda_interface/utils.c
+@@ -26,12 +26,23 @@
+ # include <sys/time.h>
+ #endif
+ 
++#if defined(_MSC_VER)
++#include <io.h>
++#ifndef STDERR_FILENO
++#define STDERR_FILENO 2
++#endif
++#endif
++
+ #include "common_interface.h"
+ #include "utils.h"
+ void
+ cderror(cdrom_drive_t *d,const char *s)
+ {
++#ifndef _MSC_VER
+   ssize_t bytes_ret __attribute__((unused));
++#else
++  ssize_t bytes_ret;
++#endif
+   if(s && d){
+     switch(d->errordest){
+     case CDDA_MESSAGE_PRINTIT:
+@@ -52,7 +63,11 @@ cderror(cdrom_drive_t *d,const char *s)
+ void
+ cdmessage(cdrom_drive_t *d, const char *s)
+ {
++#ifndef _MSC_VER
+   ssize_t bytes_ret __attribute__((unused));
++#else
++  ssize_t bytes_ret;
++#endif
+   if(s && d){
+     switch(d->messagedest){
+     case CDDA_MESSAGE_PRINTIT:
+@@ -87,7 +102,11 @@ idperror(int messagedest,char **messages,const char *f,
+     }
+ 
+   if(buffer){
++#ifndef _MSC_VER
+     ssize_t bytes_ret __attribute__((unused));
++#else
++    ssize_t bytes_ret;
++#endif
+     switch(messagedest){
+     case CDDA_MESSAGE_PRINTIT:
+       bytes_ret = write(STDERR_FILENO,buffer,strlen(buffer));
+@@ -121,7 +140,11 @@ idmessage(int messagedest,char **messages,const char *f,
+ {
+   char *buffer;
+   int malloced=0;
++#ifndef _MSC_VER
+   ssize_t bytes_ret __attribute__((unused));
++#else
++  ssize_t bytes_ret;
++#endif
+   if(!f)
+     buffer=(char *)s;
+   else
+diff --git a/lib/cdda_interface/utils.h b/lib/cdda_interface/utils.h
+index 2dd4a3c..bd7c327 100644
+--- a/lib/cdda_interface/utils.h
++++ b/lib/cdda_interface/utils.h
+@@ -21,10 +21,18 @@
+ #include <stdio.h>
+ #include <time.h>
+ 
++#if !defined(HAVE_STRUCT_TIMESPEC)
++struct timespec
++{
++    time_t  tv_sec;   /* Seconds */
++    long    tv_nsec;  /* Nanoseconds */
++};
++#endif
++
+ /* I wonder how many alignment issues this is gonna trip in the
+    future...  it shouldn't trip any...  I guess we'll find out :) */
+ 
+-static inline int 
++static CDIO_INLINE int
+ bigendianp(void)
+ {
+   int test=1;
+@@ -41,32 +49,32 @@ extern int gettime(struct timespec *);
+ 
+ #ifndef WORDS_BIGENDIAN
+ 
+-static inline int16_t be16_to_cpu(int16_t x){
++static CDIO_INLINE int16_t be16_to_cpu(int16_t x){
+   return(UINT16_SWAP_LE_BE_C(x));
+ }
+ 
+-static inline int16_t le16_to_cpu(int16_t x){
++static CDIO_INLINE int16_t le16_to_cpu(int16_t x){
+   return(x);
+ }
+ 
+ #else
+ 
+-static inline int16_t be16_to_cpu(int16_t x){
++static CDIO_INLINE int16_t be16_to_cpu(int16_t x){
+   return(x);
+ }
+ 
+-static inline int16_t le16_to_cpu(int16_t x){
++static CDIO_INLINE int16_t le16_to_cpu(int16_t x){
+   return(UINT16_SWAP_LE_BE_C(x));
+ }
+ 
+ 
+ #endif
+ 
+-static inline int16_t cpu_to_be16(int16_t x){
++static CDIO_INLINE int16_t cpu_to_be16(int16_t x){
+   return(be16_to_cpu(x));
+ }
+ 
+-static inline int16_t cpu_to_le16(int16_t x){
++static CDIO_INLINE int16_t cpu_to_le16(int16_t x){
+   return(le16_to_cpu(x));
+ }
+ 
+diff --git a/lib/paranoia/p_block.h b/lib/paranoia/p_block.h
+index 6e39b48..dcf70e7 100644
+--- a/lib/paranoia/p_block.h
++++ b/lib/paranoia/p_block.h
+@@ -43,7 +43,7 @@ typedef struct {
+   struct linked_element *head;
+   struct linked_element *tail;
+ 
+-  void *(*new_poly)();
++  void *(*new_poly)(void);
+   void (*free_poly)(void *poly);
+   long current;
+   long active;
+diff --git a/lib/paranoia/paranoia.c b/lib/paranoia/paranoia.c
+index 4175723..aeb5746 100644
+--- a/lib/paranoia/paranoia.c
++++ b/lib/paranoia/paranoia.c
+@@ -94,13 +94,16 @@
+ #ifdef HAVE_STDLIB_H
+ #include <stdlib.h>
+ #endif
++#ifdef HAVE_UNISTD_H
+ #include <unistd.h>
++#endif
+ #include <stdio.h>
+ #include <limits.h>
+ #ifdef HAVE_STRING_H
+ #include <string.h>
+ #endif
+ #include <math.h>
++#include <cdio/bytesex.h>
+ #include <cdio/paranoia/cdda.h>
+ #include "../cdda_interface/smallft.h"
+ #include <cdio/paranoia/version.h>
+@@ -138,7 +141,7 @@ const char *paranoia_cb_mode2str[] = {
+ paranoia_mode_t    debug_paranoia_mode;
+ paranoia_cb_mode_t debug_paranoia_cb_mode;
+ 
+-static inline long
++static CDIO_INLINE long
+ re(root_block *root)
+ {
+   if (!root)return(-1);
+@@ -146,7 +149,7 @@ re(root_block *root)
+   return(ce(root->vector));
+ }
+ 
+-static inline long
++static CDIO_INLINE long
+ rb(root_block *root)
+ {
+   if (!root)return(-1);
+@@ -154,7 +157,7 @@ rb(root_block *root)
+   return(cb(root->vector));
+ }
+ 
+-static inline
++static CDIO_INLINE
+ long rs(root_block *root)
+ {
+   if (!root)return(-1);
+@@ -162,7 +165,7 @@ long rs(root_block *root)
+   return(cs(root->vector));
+ }
+ 
+-static inline int16_t *
++static CDIO_INLINE int16_t *
+ rv(root_block *root){
+   if (!root)return(NULL);
+   if (!root->vector)return(NULL);
+@@ -204,7 +207,7 @@ enum  {
+  * If (ret_begin) or (ret_end) are not NULL, it fills them with the
+  * offsets of the first and last matching samples in A.
+  */
+-static inline long
++static CDIO_INLINE long
+ i_paranoia_overlap(int16_t *buffA,int16_t *buffB,
+ 		   long offsetA, long offsetB,
+ 		   long sizeA,long sizeB,
+@@ -246,7 +249,7 @@ i_paranoia_overlap(int16_t *buffA,int16_t *buffB,
+  * If (ret_begin) or (ret_end) are not NULL, it fills them with the
+  * offsets of the first and last matching samples in A.
+  */
+-static inline long
++static CDIO_INLINE long
+ i_paranoia_overlap2(int16_t *buffA,int16_t *buffB,
+ 		    unsigned char *flagsA,
+ 		    unsigned char *flagsB,
+@@ -325,7 +328,7 @@ i_paranoia_overlap2(int16_t *buffA,int16_t *buffB,
+  * (I.e., offset indicates the distance between what A considers sample N
+  * on the CD and what B considers sample N.)
+  */
+-static inline long int
++static CDIO_INLINE long int
+ do_const_sync(c_block_t *A,
+ 	      sort_info_t *B,
+ 	      unsigned char *flagB,
+@@ -395,7 +398,7 @@ do_const_sync(c_block_t *A,
+    post from root. Begin, end, offset count from B's frame of
+    reference */
+ 
+-static inline long int
++static CDIO_INLINE long int
+ try_sort_sync(cdrom_paranoia_t *p,
+ 	      sort_info_t *A, unsigned char *Aflags,
+ 	      c_block_t *B,
+@@ -546,7 +549,7 @@ afterward. */
+  * into the verified root (and its absolute position determined) in
+  * stage 2.
+  */
+-static inline void
++static CDIO_INLINE void
+ stage1_matched(c_block_t *old, c_block_t *new,
+ 	       long matchbegin,long matchend,
+ 	       long matchoffset,
+diff --git a/src/header.c b/src/header.c
+index e27c217..b0a3172 100644
+--- a/src/header.c
++++ b/src/header.c
+@@ -39,7 +39,11 @@ static void PutNum(long num,int f,int endianness,int bytes){
+ void
+ WriteWav(int f, long int bytes)
+ {
++#ifndef _MSC_VER
+   int dummy __attribute__((unused));
++#else
++  int dummy;
++#endif
+ 
+   /* quick and dirty */
+ 
+@@ -63,7 +67,11 @@ WriteAiff(int f, long int bytes)
+ {
+   long size=bytes+54;
+   long frames=bytes/4;
++#ifndef _MSC_VER
+   int dummy __attribute__((unused));
++#else
++  int dummy;
++#endif
+ 
+   /* Again, quick and dirty */
+ 
+@@ -91,7 +99,11 @@ WriteAifc(int f, long bytes)
+ {
+   long size=bytes+86;
+   long frames=bytes/4;
++#ifndef _MSC_VER
+   int dummy __attribute__((unused));
++#else
++  int dummy;
++#endif
+ 
+   /* Again, quick and dirty */
+ 
