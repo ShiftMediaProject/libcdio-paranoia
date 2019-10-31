@@ -88,6 +88,7 @@
   <ItemGroup>
     <ClInclude Include="..\include\cdio\paranoia\cdda.h" />
     <ClInclude Include="..\include\cdio\paranoia\paranoia.h" />
+    <ClInclude Include="..\include\cdio\paranoia\toc.h" />
     <ClInclude Include="config.h" />
   </ItemGroup>
   <ItemGroup>

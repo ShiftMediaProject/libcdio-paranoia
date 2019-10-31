@@ -35,6 +35,9 @@
     <ClInclude Include="..\include\cdio\paranoia\cdda.h">
       <Filter>Header Files\cdio-paranoia</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\cdio\paranoia\toc.h">
+      <Filter>Header Files\cdio-paranoia</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\lib\cdda_interface\scan_devices.c">
