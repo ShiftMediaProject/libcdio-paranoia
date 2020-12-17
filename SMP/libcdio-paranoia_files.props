@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="libcdio-paranoia.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\cdio\paranoia\cdda.h" />
+    <ClInclude Include="..\include\cdio\paranoia\paranoia.h" />
+    <ClInclude Include="..\include\cdio\paranoia\toc.h" />
+    <ClInclude Include="config.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\lib\cdda_interface\cddap_interface.c" />
+    <ClCompile Include="..\lib\cdda_interface\common_interface.c" />
+    <ClCompile Include="..\lib\cdda_interface\drive_exceptions.c" />
+    <ClCompile Include="..\lib\cdda_interface\interface.c" />
+    <ClCompile Include="..\lib\cdda_interface\scan_devices.c" />
+    <ClCompile Include="..\lib\cdda_interface\smallft.c" />
+    <ClCompile Include="..\lib\cdda_interface\test_interface.c" />
+    <ClCompile Include="..\lib\cdda_interface\toc.c" />
+    <ClCompile Include="..\lib\cdda_interface\utils.c" />
+    <ClCompile Include="..\lib\paranoia\gap.c" />
+    <ClCompile Include="..\lib\paranoia\isort.c" />
+    <ClCompile Include="..\lib\paranoia\overlap.c" />
+    <ClCompile Include="..\lib\paranoia\paranoia.c" />
+    <ClCompile Include="..\lib\paranoia\p_block.c" />
+  </ItemGroup>
+</Project>

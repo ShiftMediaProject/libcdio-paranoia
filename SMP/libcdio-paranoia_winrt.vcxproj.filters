@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{e850f24d-093f-4c30-a99c-413a7dfa71b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{f18cd969-acc3-480c-9147-ea3ae1c8ba92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{bdd0568e-d423-4fcc-affe-6ba0c2a40f78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\cdda_interface">
+      <UniqueIdentifier>{431a8017-96b9-48f3-866b-df7ad5b66199}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\paranoia">
+      <UniqueIdentifier>{975d9feb-aabe-4b71-97db-024982b7a3ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\cdio-paranoia">
+      <UniqueIdentifier>{927c6413-ed8b-452c-b626-ea74ffadae3b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libcdio-paranoia.def">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cdio\paranoia\paranoia.h">
+      <Filter>Header Files\cdio-paranoia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cdio\paranoia\cdda.h">
+      <Filter>Header Files\cdio-paranoia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\cdio\paranoia\toc.h">
+      <Filter>Header Files\cdio-paranoia</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\lib\cdda_interface\scan_devices.c">
+      <Filter>Source Files\cdda_interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\cdda_interface\smallft.c">
+      <Filter>Source Files\cdda_interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\cdda_interface\test_interface.c">
+      <Filter>Source Files\cdda_interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\cdda_interface\toc.c">
+      <Filter>Source Files\cdda_interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\cdda_interface\utils.c">
+      <Filter>Source Files\cdda_interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\cdda_interface\cddap_interface.c">
+      <Filter>Source Files\cdda_interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\cdda_interface\common_interface.c">
+      <Filter>Source Files\cdda_interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\cdda_interface\drive_exceptions.c">
+      <Filter>Source Files\cdda_interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\cdda_interface\interface.c">
+      <Filter>Source Files\cdda_interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\paranoia\p_block.c">
+      <Filter>Source Files\paranoia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\paranoia\paranoia.c">
+      <Filter>Source Files\paranoia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\paranoia\gap.c">
+      <Filter>Source Files\paranoia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\paranoia\isort.c">
+      <Filter>Source Files\paranoia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\paranoia\overlap.c">
+      <Filter>Source Files\paranoia</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
