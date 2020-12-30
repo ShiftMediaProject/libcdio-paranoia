@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A29D96E8-C933-4F8B-A5B5-17CB25D81C95}</ProjectGuid>
-    <RootNamespace>cdio-paranoia</RootNamespace>
+    <RootNamespace>cdio_paranoia</RootNamespace>
   </PropertyGroup>
   <ImportGroup Label="PropertySheets">
     <Import Project="smp_winrt_deps.props" />
