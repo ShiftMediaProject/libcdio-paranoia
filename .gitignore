@@ -5,9 +5,13 @@
 *~
 /*.directive
 /*.directive.asc
+/.python-version
+/.vscode
 /ChangeLog
+/INSTALL
 /Makefile
 /Makefile.in
+/README
 /aclocal.m4
 /autom4te.cache
 /cd-paranoia
@@ -22,6 +26,7 @@
 /configure
 /cov-int
 /depcomp
+/dist
 /install-sh
 /libcdio-*.sig
 /libcdio-*.tar.bz2
